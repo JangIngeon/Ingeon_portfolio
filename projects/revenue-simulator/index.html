@@ -938,6 +938,9 @@
     }
     .util-year-field input {
       width: 100%;
+      min-width: 0;
+      min-height: 0; /* 공통 입력창 최소 높이 덮어쓰기 */
+      padding: 0; /* 공통 입력창 여백 덮어쓰기 */
       border: 0;
       outline: 0;
       background: transparent;
@@ -946,6 +949,7 @@
       font-weight: 800;
       color: var(--text-main);
       -moz-appearance: textfield;
+      box-shadow: none !important;
     }
     .util-year-field input::-webkit-outer-spin-button,
     .util-year-field input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
