@@ -2433,15 +2433,19 @@
       const width = 860;
       const height = 360;
       const pad = { left: 82, right: 20, top: 16, bottom: 30 };
-      
-      /* 현재 탭(모델)에 따라 Y축 고정값 다르게 설정 (단위: 억) */
+
       let min, max;
       if (data.key === 'colo') {
-        // 상면임대 전용 스케일
-        min = -500;
-        max = 1500;
+        // 상면임대는 데이터 값에 맞춰 유연하게 자동 조정
+        const values = [...data.cumRevenue, ...data.cumExpense, ...data.cumProfit, 0];
+        min = Math.min(...values);
+        max = Math.max(...values);
+        if (max === min) { max += 10; min -= 10; }
+        const range = max - min;
+        max += range * 0.12;
+        min -= range * 0.12;
       } else {
-        // GPUaaS 및 모델 비교 스케일
+        // GPUaaS 및 모델 비교는 기존처럼 고정 스케일 (단위: 억) 유지
         min = -2000;
         max = 6000;
       }
