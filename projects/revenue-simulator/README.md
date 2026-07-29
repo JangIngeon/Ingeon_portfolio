@@ -1,4 +1,4 @@
-# 🧮 AIDC Revenue Simulator
+# AIDC Revenue Simulator
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 
 </div>
 
-## 📌 개요
+## 개요
 
 AI 데이터센터 사업(GPU 임대·상면임대)의 예상 수익·비용·손익을 **입력값 조정만으로 즉시 시뮬레이션**할 수 있는 단일 페이지 웹 애플리케이션입니다. 외부 라이브러리나 프레임워크 없이 순수 HTML/CSS/JavaScript로 처음부터 직접 구현했습니다.
 
@@ -19,7 +19,7 @@ AI 데이터센터 사업(GPU 임대·상면임대)의 예상 수익·비용·�
   <img src="../../docs/images/revenue-simulator/sim-01-overview.png" width="800" alt="시뮬레이터 메인 화면"/>
 </p>
 
-## ⚙️ 핵심 기능
+## 핵심 기능
 
 - **두 가지 사업 모델 비교**: GPU 임대(GPUaaS) vs 상면임대(Colocation)
 - **랙 시스템 3종 비교**: GB200 / GB300 / Vera Rubin NVL72 — 전력, 구매가, 연차별 GPU 임대단가, 성능(FP4 PFLOPS)을 실제 스펙 기준으로 반영
@@ -35,7 +35,7 @@ AI 데이터센터 사업(GPU 임대·상면임대)의 예상 수익·비용·�
   <img src="../../docs/images/revenue-simulator/sim-03-chart.png" width="49%" alt="누적 손익 차트"/>
 </p>
 
-## 🧠 기술적으로 신경 쓴 부분
+## 기술적으로 신경 쓴 부분
 
 <details>
 <summary><b>산식의 투명성 — "왜 이 숫자가 나왔는지" 항상 보여주기</b></summary>
@@ -65,7 +65,7 @@ Chart.js 같은 외부 라이브러리에 의존하지 않고, SVG 좌표 계산
 내부 상태값은 항상 원화(억원) 기준으로 유지하면서, 언어 전환 시에만 환율을 적용해 화면에 보여주는 표시값만 변환되도록 분리 설계했습니다. 이를 통해 언어를 오갈 때마다 값이 미세하게 틀어지는 부동소수점 오차 누적 문제를 방지했습니다.
 </details>
 
-## 🔗 라이브 데모
+## 라이브 데모
 
 이 프로젝트는 순수 정적 파일(HTML/CSS/JS만 사용, 서버 불필요)이라 **GitHub Pages로 바로 무료 배포**할 수 있어요.
 
@@ -76,4 +76,4 @@ Chart.js 같은 외부 라이브러리에 의존하지 않고, SVG 좌표 계산
    https://[깃허브계정].github.io/[저장소명]/projects/revenue-simulator/
    ```
 
-> 🔗 **Live Demo**: _(배포 후 이 자리에 실제 주소를 넣어주세요)_
+> 🔗 **Live Demo**: [projects/revenue-simulator 바로 실행하기](https://jangingeon.github.io/Ingeon_portfolio/projects/revenue-simulator/)
