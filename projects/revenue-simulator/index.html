@@ -179,14 +179,30 @@
     .controls-root::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; }
     .controls-root::-webkit-scrollbar-thumb:hover { background: var(--text-soft); }
     .control-group { margin-bottom: 26px; }
+    /* 첫 번째가 아닌 그룹 상단에 확실한 구분선과 여백 추가 */
+    .control-group + .control-group {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
     .control-group:last-child { margin-bottom: 0; }
     .control-group h3 {
-      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
       font-weight: 800;
       letter-spacing: -0.01em;
-      color: var(--text-muted);
-      text-transform: uppercase;
+      color: var(--text-main); /* 텍스트를 약간 더 진하게 */
       margin-bottom: 16px;
+    }
+    /* 제목 왼쪽에 오렌지색 포인트 바 추가 */
+    .control-group h3::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 15px;
+      background: var(--primary);
+      border-radius: 2px;
     }
     .control-item {
       margin-bottom: 20px;
